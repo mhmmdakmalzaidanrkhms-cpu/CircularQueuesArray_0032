@@ -28,7 +28,6 @@ public:
             return;
         }
 
-        // cek apakah antrian kosong, set FRONT & REAR ke 0
         if (FRONT == -1)
         {
             FRONT = 0;
@@ -36,7 +35,6 @@ public:
         }
         else
         {
-            // circular: jika REAR di akhir array, wrap ke index 0
             if (REAR == max - 1)
                 REAR = 0;
             else
@@ -44,5 +42,15 @@ public:
         }
 
         queue_array[REAR] = num;
+    }
+
+    void remove()
+    {
+        // cek apakah antrian kosong (underflow)
+        if (FRONT == -1)
+        {
+            cout << "Queue underflow!\n";
+            return;
+        }
     }
 };
